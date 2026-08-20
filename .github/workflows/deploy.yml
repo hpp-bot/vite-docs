@@ -39,21 +39,17 @@ jobs:
           version: 11
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
+        working-directory: ./vite-docs
 
       - name: Build VitePress
         run: pnpm build
-
-      - name: Copy 404.html for SPA routing
-        run: |
-          # VitePress generates 404.html in dist root
-          # Copy it to ensure GitHub Pages uses our SPA router
-          cp .vitepress/dist/404.html .vitepress/dist/vite-docs/404.html 2>/dev/null || true
+        working-directory: ./vite-docs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist
+          path: vite-docs/.vitepress/dist
 
   deploy:
     environment:
