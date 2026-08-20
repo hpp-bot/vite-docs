@@ -30,22 +30,16 @@ jobs:
 
       - name: Sync theme files
         run: |
-          # 备份当前主题（如果存在）
           if [ -d ".vitepress/theme" ] && [ "$(ls -A .vitepress/theme 2>/dev/null)" ]; then
             echo "Current theme exists, backing up..."
             cp -r .vitepress/theme .vitepress/theme-backup
           fi
-          
-          # 复制新主题
           mkdir -p .vitepress/theme
           cp -r /tmp/theme-repo/.vitepress/theme/* .vitepress/theme/
-          
-          # 检查是否有变更
           if git diff --quiet; then
             echo "No theme changes detected."
             exit 0
           fi
-          
           echo "Theme files updated, committing..."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -57,5 +51,4 @@ jobs:
 
       - name: Trigger rebuild
         run: |
-          # 推送后会自动触发 deploy.yml
           echo "Theme sync complete. Deploy workflow will trigger automatically."
