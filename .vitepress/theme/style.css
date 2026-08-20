@@ -1,0 +1,165 @@
+/* ============================================
+   ViteDocs Theme - 扁平化二次元风格
+   此文件从私有仓库 vite-docs-theme 同步而来
+   ============================================ */
+
+:root {
+  /* Brand Colors - 二次元粉色系 */
+  --vp-c-brand-1: #ff6b9d;
+  --vp-c-brand-2: #ff8fb4;
+  --vp-c-brand-3: #ff4d8a;
+  --vp-c-brand-soft: rgba(255, 107, 157, 0.12);
+
+  /* Accent Colors */
+  --vp-c-accent-1: #7c5cfc;
+  --vp-c-accent-2: #a78bfa;
+  --vp-c-accent-soft: rgba(124, 92, 252, 0.12);
+
+  /* Background */
+  --vp-c-bg: #fef6f9;
+  --vp-c-bg-soft: #fff0f5;
+  --vp-c-bg-soft-up: #fff8fb;
+  --vp-c-bg-mute: #fdf0f4;
+
+  /* Text */
+  --vp-c-text-1: #2d2d3a;
+  --vp-c-text-2: #5a5a72;
+  --vp-c-text-3: #8a8a9a;
+
+  /* Border */
+  --vp-c-border: #ffd6e8;
+  --vp-c-divider: #ffe4ef;
+
+  /* Radius */
+  --vp-radius: 12px;
+  --vp-radius-lg: 20px;
+
+  /* Font */
+  --vp-font-family-base: 'Noto Sans SC', 'Segoe UI', system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --vp-font-family-heading: 'ZCOOL QingKe HuangYou', 'Noto Sans SC', sans-serif;
+}
+
+.dark {
+  --vp-c-bg: #1a1520;
+  --vp-c-bg-soft: #231a2e;
+  --vp-c-bg-soft-up: #1e1528;
+  --vp-c-bg-mute: #251c30;
+  --vp-c-text-1: #f0e6f6;
+  --vp-c-text-2: #c4b5d0;
+  --vp-c-text-3: #8a7a9a;
+  --vp-c-border: #3d2a45;
+  --vp-c-divider: #2e2040;
+  --vp-c-brand-soft: rgba(255, 107, 157, 0.2);
+  --vp-c-accent-soft: rgba(124, 92, 252, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  font-family: var(--vp-font-family-base);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 107, 157, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 92, 252, 0.05) 0%, transparent 50%);
+}
+
+.VPNav {
+  background: rgba(254, 246, 249, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+.dark .VPNav { background: rgba(26, 21, 32, 0.85) !important; }
+
+.VPNavBarTitle {
+  font-family: var(--vp-font-family-heading) !important;
+  font-size: 1.5rem !important;
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPSidebar {
+  background: var(--vp-c-bg-soft) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+}
+
+.VPSidebarItem.is-active > .item > .link {
+  background: var(--vp-c-brand-soft) !important;
+  color: var(--vp-c-brand-1) !important;
+  border-radius: var(--vp-radius) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--vp-font-family-heading);
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h1 {
+  font-size: 2.5rem !important;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-accent-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc code {
+  font-family: var(--vp-font-family-mono) !important;
+  background: var(--vp-c-bg-soft) !important;
+  border-radius: 8px !important;
+  padding: 2px 8px !important;
+  color: var(--vp-c-brand-3) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  font-size: 0.875em;
+}
+
+.vp-doc pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.card {
+  background: var(--vp-c-bg-soft-up);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--vp-radius-lg);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+  border-color: var(--vp-c-brand-2);
+}
+
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider) !important;
+  background: var(--vp-c-bg-soft) !important;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--vp-c-bg); }
+::-webkit-scrollbar-thumb { background: var(--vp-c-brand-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--vp-c-brand-1); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}

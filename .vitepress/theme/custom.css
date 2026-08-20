@@ -1,0 +1,54 @@
+/* ============================================
+   ViteDocs Custom Styles
+   ============================================ */
+
+.github-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--vp-c-brand-soft);
+  border: 1px solid var(--vp-c-brand-2);
+  border-radius: 20px;
+  color: var(--vp-c-brand-1);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+}
+.github-edit-btn:hover {
+  background: var(--vp-c-brand-1);
+  color: white;
+  transform: scale(1.05);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.feature-card {
+  background: var(--vp-c-bg-soft-up);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--vp-radius-lg);
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 107, 157, 0.15);
+  border-color: var(--vp-c-brand-2);
+}
+.feature-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.feature-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.feature-card p { font-size: 0.95rem; color: var(--vp-c-text-2); line-height: 1.6; }
+
+.highlight-box {
+  background: linear-gradient(135deg, var(--vp-c-brand-soft), var(--vp-c-accent-soft));
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 0 var(--vp-radius) var(--vp-radius) 0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}

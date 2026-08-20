@@ -1,0 +1,22 @@
+{
+  "name": "vite-docs",
+  "version": "1.0.0",
+  "description": "ViteDocs - 扁平化二次元风格文档站点",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "vitepress": "^1.6.4",
+    "axios": "^1.7.0"
+  }
+}
