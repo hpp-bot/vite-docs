@@ -5,7 +5,7 @@ export default defineConfig({
   description: '扁平化二次元风格文档站点',
   base: '/vite-docs/',
   lang: 'zh-CN',
-
+  cleanUrls: true,
   ignoreDeadLinks: true,
 
   themeConfig: {
